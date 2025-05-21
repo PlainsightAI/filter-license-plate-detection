@@ -5,6 +5,11 @@ License Plate Detection filter release notes
 
 ## v0.1.2 - 2025-05-22
 
+### Changed
+- Updated dependencies
+
+## v0.1.2 - 2025-05-22
+
 ### Added
 - Initial release of the license plate detection filter using a custom-trained Faster R-CNN model.
 - Supports detection of license plates in image frames with the following features:
