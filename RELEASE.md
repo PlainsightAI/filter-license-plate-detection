@@ -3,6 +3,11 @@ License Plate Detection filter release notes
 
 ## [Unreleased]
 
+## v0.1.4 - 2025-07-15
+
+### Changed
+- Updated dependencies
+
 ## v0.1.3 - 2025-05-22
 
 ### Changed
