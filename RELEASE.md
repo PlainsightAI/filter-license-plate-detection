@@ -3,6 +3,11 @@ License Plate Detection filter release notes
 
 ## [Unreleased]
 
+## v0.1.5 - 2025-07-30
+
+### Added
+- Support for model info-context
+
 ## v0.1.4 - 2025-07-15
 
 ### Changed
