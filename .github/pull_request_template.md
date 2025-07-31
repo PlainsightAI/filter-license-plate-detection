@@ -1,6 +1,6 @@
 # 📦 Pull Request
 
-Thank you for contributing to the OCR Filter!
+Thank you for contributing to the LPD Filter!
 
 Please fill out this form to help us understand your change.
 
