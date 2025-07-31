@@ -27,11 +27,8 @@ PIPELINE := \
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-.PHONY: install
-install:  ## Install package with dev dependencies
-	pip install -e .[dev] \
-		--extra-index-url https://python.openfilter.io/simple
-
+.PHONY: download-model
+download-model:
 	@if [ ! -f model.pth ]; then \
 		echo "model not found, downloading model archive..."; \
 		curl -L -o model.zip https://models.openfilter.io/license_plate_detection_model/v0.1.0.zip; \
@@ -42,6 +39,11 @@ install:  ## Install package with dev dependencies
 	else \
 		echo "model already exists, skipping download."; \
 	fi
+
+.PHONY: install
+install: download-model
+	pip install -e .[dev] \
+		--extra-index-url https://python.openfilter.io/simple
 
 .PHONY: run
 run:  ## Run locally with supporting Filters in other processes
