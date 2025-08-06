@@ -1,4 +1,4 @@
-[license_plate_detection_model]
-version='0.1.0'
+[lpd]
+version='v0.1.0'
 type='custom'
 path='./model.pth'
