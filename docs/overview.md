@@ -1,10 +1,10 @@
 ---
-title: License Plate Detection Filter
+title: DriveID Filter
 sidebar_label: Overview
 sidebar_position: 1
 ---
 
-The **License Plate Detection Filter** identifies license plates in video frames using a custom [Faster R-CNN](https://pytorch.org/vision/stable/models/generated/torchvision.models.detection.fasterrcnn_resnet50_fpn.html) model. It can log detections to disk, propagate bounding boxes as ROI polygons, and integrates seamlessly with [OpenFilter](https://github.com/PlainsightAI/openfilter) pipelines.
+The **DriveID Filter** identifies license plates in video frames using a custom [Faster R-CNN](https://pytorch.org/vision/stable/models/generated/torchvision.models.detection.fasterrcnn_resnet50_fpn.html) model. It can log detections to disk, propagate bounding boxes as ROI polygons, and integrates seamlessly with [OpenFilter](https://github.com/PlainsightAI/openfilter) pipelines.
 
 This document is automatically published to production documentation on every production release.
 
