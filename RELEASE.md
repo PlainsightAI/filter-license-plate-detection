@@ -1,7 +1,12 @@
 # Changelog
-License Plate Detection filter release notes
+DriveID filter release notes
 
 ## [Unreleased]
+
+## v0.1.8 - 2025-09-27
+
+### Changed
+- Updated documentation
 
 ## v0.1.7 - 2025-08-06
 
@@ -32,7 +37,7 @@ License Plate Detection filter release notes
 ## v0.1.2 - 2025-05-22
 
 ### Added
-- Initial release of the license plate detection filter using a custom-trained Faster R-CNN model.
+- Initial release of the DriveID filter using a custom-trained Faster R-CNN model.
 - Supports detection of license plates in image frames with the following features:
   - Loads a Torch model from a configurable `model_path`
   - Detects plates and returns bounding boxes with confidence scores

@@ -1,6 +1,6 @@
-# Contributing to the License Plate Detection Filter
+# Contributing to the DriveID Filter
 
-Thanks for your interest in improving the **License Plate Detection Filter**, an OpenFilter-based component for detecting license plates using a custom Faster R-CNN model! 🚘  
+Thanks for your interest in improving the **DriveID Filter**, an OpenFilter-based component for detecting license plates using a custom Faster R-CNN model! 🚘  
 Whether you're tuning model performance, fixing bugs in ROI logic, improving I/O or logging, or enhancing documentation — your contributions are appreciated.
 
 This guide helps you:
@@ -32,7 +32,7 @@ This guide helps you:
 
 ## Setting up your development environment
 
-The License Plate Detection Filter is a standalone Python package that uses [OpenFilter](https://github.com/PlainsightAI/openfilter) as its framework and PyTorch for detection.
+The DriveID Filter is a standalone Python package that uses [OpenFilter](https://github.com/PlainsightAI/openfilter) as its framework and PyTorch for detection.
 
 To get started:
 
@@ -282,7 +282,7 @@ gitGraph
 
 ## Thank you 🙏
 
-The License Plate Detection Filter is made better by contributors like you.
+The DriveID Filter is made better by contributors like you.
 Whether you're fixing edge cases, improving model compatibility, or enhancing logging — we appreciate your help.
 
 Questions? Ideas? Open an [issue](https://github.com/PlainsightAI/filter-license-plate-detection/issues) or start a PR — and thank you!

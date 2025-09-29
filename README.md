@@ -1,6 +1,6 @@
-# 🚘 License Plate Detection Filter
+# 🚘 DriveID Filter
 
-**License Plate Detection Filter** is a modular [OpenFilter](https://github.com/PlainsightAI/openfilter)-based component that detects license plates in video frames using a custom-trained [Faster R-CNN](https://pytorch.org/vision/stable/models/generated/torchvision.models.detection.fasterrcnn_resnet50_fpn.html) model.
+**DriveID Filter** is a modular [OpenFilter](https://github.com/PlainsightAI/openfilter)-based component that detects license plates in video frames using a custom-trained [Faster R-CNN](https://pytorch.org/vision/stable/models/generated/torchvision.models.detection.fasterrcnn_resnet50_fpn.html) model.
 
 It supports per-frame bounding box predictions, polygon ROI forwarding, and configurable JSON logging — making it easy to plug into OpenFilter pipelines and downstream processing systems.
 
@@ -46,7 +46,7 @@ make install
 
 ## 🚀 Quick Start (CLI)
 
-Run the License Plate Detection Filter as part of a pipeline:
+Run the DriveID Filter as part of a pipeline:
 
 ```bash
 openfilter run \
@@ -191,5 +191,5 @@ Licensed under the [Apache 2.0 License](https://github.com/PlainsightAI/filter-l
 
 ## 🙌 Acknowledgements
 
-Thanks for using and improving the License Plate Detection Filter!
+Thanks for using and improving the DriveID Filter!
 To report bugs or suggest improvements, [open a GitHub issue](https://github.com/PlainsightAI/filter-license-plate-detection/issues/new/choose).
