@@ -2,6 +2,8 @@
 # Repo-specific variables
 # ---------------------------------
 
+IMAGE ?= plainsightai/openfilter-license-plate-detection
+
 VERSION ?= $(shell cat VERSION)
 
 # Define these variables for consistency in the repo
