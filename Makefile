@@ -1,3 +1,5 @@
+IMAGE ?= plainsightai/openfilter-license-plate-detection
+
 # ---------------------------------
 # Repo-specific variables
 # ---------------------------------

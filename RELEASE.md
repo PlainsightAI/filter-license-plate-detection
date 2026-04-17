@@ -3,6 +3,14 @@ DriveID filter release notes
 
 ## [Unreleased]
 
+## v0.1.9 - 2026-04-17
+
+### Changed
+- Add CI/CD workflows: create-release.yaml, ci.yaml, security-scan.yaml
+- Bump openfilter to >=0.1.27
+- Add Makefile IMAGE for Docker Hub
+
+
 ## v0.1.8 - 2025-09-27
 
 ### Changed
