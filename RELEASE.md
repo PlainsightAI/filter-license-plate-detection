@@ -1,5 +1,3 @@
-# v0.1.11
-
 # Changelog
 DriveID filter release notes
 
