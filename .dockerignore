@@ -5,6 +5,10 @@ docs
 scripts
 *.md
 !README.md
+*.mp4
+*.pth
+data/
+venv/
 __pycache__
 *.pyc
 *.egg-info
