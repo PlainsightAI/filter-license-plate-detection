@@ -4,6 +4,11 @@ DriveID filter release notes
 
 ## [Unreleased]
 
+## v0.1.12 - 2026-04-27
+
+### Added
+- Add Dockerfile and .dockerignore for Docker Hub publishing
+
 ## v0.1.11 - 2026-04-24
 
 ### Changed
