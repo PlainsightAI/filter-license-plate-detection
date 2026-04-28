@@ -1,4 +1,6 @@
 # syntax=docker/dockerfile:1.4
+# torch on PyPI (>=2.10) includes CUDA on Linux x86_64 automatically.
+# GPU is available when run with --gpus; falls back to CPU otherwise.
 FROM python:3.11.12-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
