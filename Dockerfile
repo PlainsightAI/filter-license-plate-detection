@@ -9,11 +9,13 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 RUN useradd -ms /bin/bash appuser
 WORKDIR /app
 
-COPY . .
+COPY --chown=appuser:appuser . .
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir .
 
-RUN mkdir -p /app/logs && chown -R appuser:appuser /app
+RUN mkdir -p /app/logs && chown -R appuser:appuser /app/logs
 
+# No model is bundled in the image. Mount or set FILTER_MODEL_PATH at runtime.
+# Example: docker run -v /host/model.pth:/app/model.pth -e FILTER_MODEL_PATH=/app/model.pth ...
 USER appuser
 CMD ["python", "-m", "filter_license_plate_detection.filter"]
