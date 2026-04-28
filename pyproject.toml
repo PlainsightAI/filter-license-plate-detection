@@ -26,8 +26,8 @@ dynamic = ["version"]
 
 dependencies = [
   "openfilter[all]>=0.1.30,<0.2.0",
-  "torch>=2.0.0",
-  "torchvision>=0.15.0",
+  "torch>=2.10.0",
+  "torchvision>=0.22.0",
   "python-dotenv"
 ]
 
