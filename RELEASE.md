@@ -4,6 +4,10 @@ DriveID filter release notes
 
 ## [Unreleased]
 
+### Changed
+
+- Bump openfilter to 0.2.1
+
 ## v0.1.12 - 2026-04-27
 
 ### Added
