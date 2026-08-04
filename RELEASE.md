@@ -4,9 +4,14 @@ DriveID filter release notes
 
 ## [Unreleased]
 
+## v0.1.14 - 2026-08-04
+
 ### Changed
 
-- Bump the openfilter dependency to 1.2.1
+- Update the `openfilter[all]` dependency to `>=1.2.1,<2.0.0`.
+- Grant `id-token: write` in the release workflow to enable keyless (cosign) SBOM attestation in the shared reusable.
+- Restore the build-commit facet: rename `GITHUB_SHA` → `VERSION_SHA` after the source `COPY` so openfilter reports `version_sha`.
+- Update dev-tooling floors and switch the dev pins to ranges (`setuptools>=83.0.0`, `wheel>=0.46.2`, `pytest>=9.0.3`, `pytest-cov>=6.0.0`).
 
 ## v0.1.13 - 2026-07-30
 
@@ -23,8 +28,7 @@ DriveID filter release notes
 
 ### Changed
 - Fix release workflow secret names: `PYPI_API_TOKEN` → `PLAINSIGHT_PYPI_TOKEN`, `DOCKERHUB_TOKEN` → `DOCKERHUB_ACCESS_TOKEN` (org-level secret names). Without this the PyPI / Docker Hub tokens resolved to empty and no package has been published since the migration.
-- Bump openfilter dependency to `>=0.1.30`.
-- Align CI workflow with shared release gate (source-paths).
+- Update the openfilter dependency to `>=0.1.30`, and align the CI workflow with the shared release gate (source-paths).
 - Remove redundant ci.yaml (shared workflow handles PR testing).
 - Add push + pull_request triggers to create-release.yaml.
 
@@ -33,7 +37,7 @@ DriveID filter release notes
 
 ### Changed
 - Add CI/CD workflows: create-release.yaml, ci.yaml, security-scan.yaml
-- Bump openfilter to >=0.1.27
+- Update openfilter to >=0.1.27
 - Add Makefile IMAGE for Docker Hub
 
 
