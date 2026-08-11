@@ -1,13 +1,14 @@
 # Changelog
 DriveID filter release notes
 
-
 ## [Unreleased]
+
+## v0.1.15 - 2026-08-10
 
 ### Changed
 
 - Build the image on `openfilter-base` (weekly apt-upgraded python-slim) instead of a stale `python:X.Y.Z-slim` pin, clearing the OS-package CVEs the pin carried.
-- Bump the openfilter dependency to 1.2.2
+- Update the openfilter dependency to 1.2.2
 
 ## v0.1.14 - 2026-08-04
 
@@ -37,14 +38,12 @@ DriveID filter release notes
 - Remove redundant ci.yaml (shared workflow handles PR testing).
 - Add push + pull_request triggers to create-release.yaml.
 
-
 ## v0.1.9 - 2026-04-17
 
 ### Changed
 - Add CI/CD workflows: create-release.yaml, ci.yaml, security-scan.yaml
 - Update openfilter to >=0.1.27
 - Add Makefile IMAGE for Docker Hub
-
 
 ## v0.1.8 - 2025-09-27
 
