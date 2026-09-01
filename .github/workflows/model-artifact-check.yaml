@@ -1,0 +1,31 @@
+name: Model Artifact Check
+
+# Guards against a repeat of FILTER-648: the public model URL 404'd for
+# ~a year with no CI ever noticing, because `make install` only runs the
+# download step when model.pth is already missing from the runner.
+# This check always re-fetches, independent of the Makefile target.
+#
+# The URL here is intentionally hardcoded to match the Makefile's
+# `download-model` target (openfilter/examples/hello-world uses the same
+# URL) — if one changes, update the other.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * 1'  # weekly, Monday 06:00 UTC
+
+jobs:
+  check-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download model archive (follow redirects, fail on non-2xx)
+        run: |
+          curl -fL --retry 2 --retry-delay 5 \
+            -o model.zip \
+            https://storage.googleapis.com/plainsight-ml-assets-production/models/license_plate_detection_model_v0.1.0.zip
+
+      - name: Verify archive is a valid zip
+        run: unzip -t model.zip
+
+      - name: Verify model.pth is present in the archive
+        run: unzip -l model.zip | grep -q 'model\.pth$'
