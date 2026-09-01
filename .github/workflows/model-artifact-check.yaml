@@ -1,13 +1,13 @@
 name: Model Artifact Check
 
-# Guards against a repeat of FILTER-648: the public model URL 404'd for
-# ~a year with no CI ever noticing, because `make install` only runs the
-# download step when model.pth is already missing from the runner.
-# This check always re-fetches, independent of the Makefile target.
+# Guards against the public model download breaking without CI noticing.
+# `make install` only re-downloads when model.pth is missing locally, so a
+# broken URL can go undetected indefinitely — no other job in this repo
+# exercises the download.
 #
-# The URL here is intentionally hardcoded to match the Makefile's
-# `download-model` target (openfilter/examples/hello-world uses the same
-# URL) — if one changes, update the other.
+# This job runs the actual `download-model` recipe consumers use, so it
+# fails the same way a real install would rather than checking a separate
+# copy of the logic.
 
 on:
   workflow_dispatch:
@@ -17,15 +17,16 @@ on:
 jobs:
   check-artifact:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions: {}
     steps:
-      - name: Download model archive (follow redirects, fail on non-2xx)
-        run: |
-          curl -fL --retry 2 --retry-delay 5 \
-            -o model.zip \
-            https://storage.googleapis.com/plainsight-ml-assets-production/models/license_plate_detection_model_v0.1.0.zip
+      - uses: actions/checkout@v4
 
-      - name: Verify archive is a valid zip
-        run: unzip -t model.zip
+      - name: Download model via the consumer recipe
+        run: make download-model
 
-      - name: Verify model.pth is present in the archive
-        run: unzip -l model.zip | grep -q 'model\.pth$'
+      - name: Verify model.pth exists
+        run: test -f model.pth
+
+      - name: Verify model.pth integrity
+        run: echo "ab6a6639042b7e66d38d738b9a35fe95058b989d8e0f5e6f6f90276a8ea3c605  model.pth" | sha256sum -c -
